@@ -1,5 +1,10 @@
 import 'package:get_it/get_it.dart';
 
+import 'data/repositories/network_repository_impl.dart';
+import 'domain/repositories/network_repository.dart';
+import 'domain/usecases/sync_pending.dart';
+import 'presentation/blocs/network_cubit.dart';
+
 import 'data/datasources/intervention_local_datasource.dart';
 import 'data/datasources/intervention_remote_datasource.dart';
 import 'data/repositories/intervention_repository_impl.dart';
@@ -27,4 +32,10 @@ void setupDependencies() {
 
   // Presentation
   sl.registerFactory(() => InterventionCubit(sl<GetInterventions>()));
+
+  sl.registerLazySingleton<NetworkRepository>(() => NetworkRepositoryImpl());
+  sl.registerLazySingleton(() => SyncPending(sl<InterventionRepository>()));
+  sl.registerLazySingleton(
+    () => NetworkCubit(sl<NetworkRepository>(), sl<SyncPending>()),
+  );
 }

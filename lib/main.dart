@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'presentation/blocs/network_cubit.dart';
+
 import 'injection.dart';
 import 'presentation/blocs/intervention_cubit.dart';
 import 'presentation/pages/intervention_list_page.dart';
@@ -20,8 +22,11 @@ class TerrainProApp extends StatelessWidget {
       title: 'TerrainPro',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorSchemeSeed: Colors.indigo, useMaterial3: true),
-      home: BlocProvider(
-        create: (_) => sl<InterventionCubit>()..load(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => sl<InterventionCubit>()..load()),
+          BlocProvider.value(value: sl<NetworkCubit>()),
+        ],
         child: const InterventionListPage(),
       ),
     );
