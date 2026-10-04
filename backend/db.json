@@ -1,0 +1,49 @@
+﻿{
+  "users": [
+    { "id": 1, "email": "tech@techfix.com", "password": "1234", "name": "Moussa Diop" }
+  ],
+  "interventions": [
+    {
+      "id": 1,
+      "client": "Sonatel Dakar",
+      "address": "Rue 10, Dakar",
+      "description": "Routeur en panne",
+      "equipment": "Routeur Cisco",
+      "status": "pending",
+      "priority": 1,
+      "lat": 14.6928,
+      "lng": -17.4467,
+      "notes": null,
+      "photos": [],
+      "signaturePath": null
+    },
+    {
+      "id": 2,
+      "client": "Orange Almadies",
+      "address": "Route des Almadies, Dakar",
+      "description": "Panne d'antenne relais",
+      "equipment": "Antenne 4G",
+      "status": "inProgress",
+      "priority": 2,
+      "lat": 14.7447,
+      "lng": -17.5126,
+      "notes": null,
+      "photos": [],
+      "signaturePath": null
+    },
+    {
+      "id": 3,
+      "client": "Port Autonome de Dakar",
+      "address": "Boulevard de la Libération, Dakar",
+      "description": "Groupe électrogène à réviser",
+      "equipment": "Groupe électrogène 100 kVA",
+      "status": "pending",
+      "priority": 3,
+      "lat": 14.6823,
+      "lng": -17.4287,
+      "notes": null,
+      "photos": [],
+      "signaturePath": null
+    }
+  ]
+}

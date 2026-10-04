@@ -45,10 +45,8 @@ dependencies:
   flutter_map: ^8.3.2
   latlong2: ^0.10.1
   image_picker: ^1.2.3
-  flutter_local_notifications: ^8.2.0
   signature: ^6.4.0
   get_it: ^9.3.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
